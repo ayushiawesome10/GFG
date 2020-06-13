@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-typedef struct node
+struct node
 {
 	int data;
 	node* left;
 	node* right;
 
-}node;
+};
 
 node *newNode(int data)
 {
