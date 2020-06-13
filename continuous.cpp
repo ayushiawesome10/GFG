@@ -23,12 +23,16 @@ node *newNode(int data)
 bool treeContinuous(node* root){
 	if(root==NULL)
 		return true;
+	
 	if(root->left == NULL && root->right == NULL)
 		return true;
+	//if the left subtree exists
 	if(root->left != NULL && root->right == NULL)
 		return (abs(root->data - root->left->data)==1 && treeContinuous(root->left));
+	//if the right subtree exists
 	if(root->right != NULL && root->left == NULL)
 		return (abs(root->data - root->right->data)==1 && treeContinuous(root->right));
+	//if both left and right subtree exists
 	return (abs(root->left->data -  root->data)==1 && abs(root->right->data - root->data)==1
 		&& treeContinuous(root->left) && treeContinuous(root->right));
 }
