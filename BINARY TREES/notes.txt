@@ -1,0 +1,6 @@
+Complete 
+1)Deletion in a binary tree
+2)Evaluation of expression
+3)inorder traversal without recursion and stack
+4)start from postorder traversal from given preorder and inorder traversal
+ 
