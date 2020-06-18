@@ -1,0 +1,7 @@
+//Complete 
+//k-cores problem
+//Minimum initial vertices to traverse whole matrix with given conditions
+//Shortest path to reach one prime to other by changing single digit at a time
+//Water Jug problem using BFS
+//Construct binary palindrome by repeated appending and trimming
+//Path in a Rectangle with Circles

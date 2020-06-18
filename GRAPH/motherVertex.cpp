@@ -43,7 +43,41 @@ void Graph::addEdge(int v, int w)
 // Returns a mother vertex if exists. Otherwise returns -1 
 int Graph::findMother() 
 { 
-	
+    // visited[] is used for DFS. Initially all are 
+    // initialized as not visited 
+    vector <bool> visited(V, false); 
+  
+    // To store last finished vertex (or mother vertex) 
+    int v ; 
+  
+    // Do a DFS traversal and find the last finished 
+    // vertex   
+    for (int i = 0; i < V; i++) 
+    { 
+        if (visited[i] == false) 
+        { 
+            DFSUtil(i, visited); 
+            v = i; 
+        } 
+    } 
+  
+    // If there exist mother vertex (or vetices) in given 
+    // graph, then v must be one (or one of them) 
+  
+    // Now check if v is actually a mother vertex (or graph 
+    // has a mother vertex).  We basically check if every vertex 
+    // is reachable from v or not. 
+  
+    // Reset all values in visited[] as false and do  
+    // DFS beginning from v to check if all vertices are 
+    // reachable from it or not. 
+    fill(visited.begin(), visited.end(), false); 
+    DFSUtil(v, visited);  
+    for (int i=0; i<V; i++) 
+        if (visited[i] == false) 
+            return -1; 
+  
+    return v; 
 } 
 
 // Driver program to test above functions 
@@ -65,3 +99,11 @@ int main()
 
 	return 0; 
 } 
+
+
+
+//To find the mother vertex first we need to traverse the graph using DFS and keep marking the 
+//visited nodes as 1 and the last visited vertex will be the mother vertex. After getting the mother
+//vertex we run DFS function again to check if the node exist as it may be disconnected graph
+//and then if any of the nodes was false that means it is not reachable otherwise we return the 
+//last visited vertex as the answer 
