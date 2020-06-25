@@ -26,7 +26,8 @@ int MaxSumDifference(int arr[], int n)
 // Driver function 
 int main() 
 { 
-    int a[] = { 1, 4, 2, 8 }; 
+    //int a[] = { 1, 4, 2, 8 }; Ans-->18
+    int a[] = { 10, 12, 15};  //Ans-->10
     int n = sizeof(a) / sizeof(a[0]); 
   	cout << MaxSumDifference(a, n) << endl; 
 } 
