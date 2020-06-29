@@ -1,3 +1,4 @@
+//From coding ninjas easy to understand but gives problems for other input
 #include <iostream>
 #include <algorithm>
 using namespace std;
